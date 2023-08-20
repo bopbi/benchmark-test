@@ -1,6 +1,7 @@
 package com.bobbyprabowo.benchmarktest
 
 import android.app.Application
+import android.content.Context
 import android.os.StrictMode
 
 class MainApplication : Application() {
@@ -23,5 +24,13 @@ class MainApplication : Application() {
             .build()
         )
         super.onCreate()
+
+        val sharedPref = getSharedPreferences("benchmark-app",Context.MODE_PRIVATE)
+        with(sharedPref.edit()) {
+            (1..100).forEach {
+                putString("key + ${it.toString()}", it.toString())
+            }
+            apply()
+        }
     }
 }

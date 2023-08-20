@@ -13,6 +13,8 @@
         android:theme="@style/Theme.BenchmarkTest"
         android:name=".MainApplication"
         tools:targetApi="31">
+        <!--suppress AndroidElementNotAllowed -->
+        <profileable android:shell="true"/>
         <activity
             android:name=".BenchmarkSharedPreferencesActivity"
             android:exported="false" />

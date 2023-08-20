@@ -18,7 +18,7 @@ class BenchmarkSharedPreferencesActivity : AppCompatActivity() {
     }
 
     private fun startBenchmark() {
-        val sharedPref = getPreferences(Context.MODE_PRIVATE)
+        val sharedPref = getSharedPreferences("benchmark-app", Context.MODE_PRIVATE)
         with(sharedPref.edit()) {
             (1..100).forEach {
                 putString("key + ${it.toString()}", it.toString())
